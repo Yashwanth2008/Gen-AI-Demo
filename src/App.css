@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.overall-wrapper {
+  font-family: "Inter", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100vw;
+  height: 100vh;
+}
+.submit-btn {
+  width: 90px;
+  height: 40px;
+  background-color: #2a65f0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.Prompt-area {
+  font-size: 25px;
+  font-family: "Inter", serif;
+  outline: unset;
+  padding: 10px;
+}
+.response-content{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
