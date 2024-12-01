@@ -22,6 +22,7 @@ body {
   color: #fff;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 .Prompt-area {
   font-size: 25px;
