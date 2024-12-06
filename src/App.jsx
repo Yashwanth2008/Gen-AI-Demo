@@ -12,13 +12,19 @@ function Gemini_API() {
     );
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     try {
-      const result = await model.generateContent(`Rephase or correct this sentence :: ${prompt}`);
+      const result = await model.generateContent(`${prompt}`);
       setResponse(result.response.text());
     } catch (error) {
       console.error("Error generating content:", error);
       setResponse("An error occurred while generating content.");
     }
   };
+
+  const handleClear = () => {
+    setPrompt("");
+    setResponse("");
+  };
+  
   return (
     <div className="overall-wrapper">
       <h2>Generative AI Demo</h2>
@@ -27,12 +33,21 @@ function Gemini_API() {
         rows="4"
         cols="50"
         value={prompt}
+        placeholder="Enter the prompt"
         onChange={(e) => setPrompt(e.target.value)}
       ></textarea>
       <br />
-      <button className="submit-btn" onClick={handleGenerate}>Generate</button>
-      {/* <div>Response :</div> */}
-      <p className="response-content">{response}</p>
+      <div className="buttons">
+        <button className="submit-btn" onClick={handleGenerate}>
+          Generate
+        </button>
+        <button className="submit-btn" onClick={handleClear}>
+          Clear
+        </button>
+      </div>
+      <div className="response-content">
+        <p className="response-content">{response}</p>
+      </div>
     </div>
   );
 }
