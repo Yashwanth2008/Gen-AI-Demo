@@ -24,7 +24,7 @@ function Gemini_API() {
     setPrompt("");
     setResponse("");
   };
-  
+
   return (
     <div className="overall-wrapper">
       <h2>Generative AI Demo</h2>
@@ -33,7 +33,7 @@ function Gemini_API() {
         rows="4"
         cols="50"
         value={prompt}
-        placeholder="Enter the prompt"
+        placeholder="Enter the prompt...."
         onChange={(e) => setPrompt(e.target.value)}
       ></textarea>
       <br />

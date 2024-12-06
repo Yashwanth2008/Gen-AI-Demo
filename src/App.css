@@ -14,6 +14,8 @@ body {
   gap: 10px;
   width: 100vw;
   height: 100vh;
+  position: relative;
+  bottom: 200px;
 }
 .submit-btn {
   width: 90px;
@@ -25,15 +27,19 @@ body {
   cursor: pointer;
 }
 .Prompt-area {
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Inter", serif;
   outline: unset;
   padding: 10px;
+  width: 1000px;
+  height: 240px;
 }
 .response-content{
   width: 90%;
   display: flex;
   justify-content: center;
+  position: relative;
+  top: 50px;
 }
 .buttons{
   display: flex;
