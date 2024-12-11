@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import "./App.css";
+import Button from "./components/Button";
 
 function Gemini_API() {
   const [prompt, setPrompt] = useState();
@@ -27,7 +28,7 @@ function Gemini_API() {
 
   return (
     <div className="overall-wrapper">
-      <h2>Generative AI Demo</h2>
+      <h2>Demo</h2>
       <textarea
         className="Prompt-area"
         rows="4"
@@ -38,12 +39,8 @@ function Gemini_API() {
       ></textarea>
       <br />
       <div className="buttons">
-        <button className="submit-btn" onClick={handleGenerate}>
-          Generate
-        </button>
-        <button className="submit-btn" onClick={handleClear}>
-          Clear
-        </button>
+        <Button title="Generate" functionality={handleGenerate}/>
+        <Button title="Clear" functionality={handleClear}/>
       </div>
       <div className="response-content">
         <p className="response-content">{response}</p>
