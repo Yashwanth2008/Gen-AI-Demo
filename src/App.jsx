@@ -14,7 +14,7 @@ function Gemini_API() {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   
     try {
-      const taskPrompt = `Please rephrase the following sentence in a professional manner:\n"${prompt}"`;
+      const taskPrompt = `Please rephrase the following sentence professionally. Provide only the paraphrased sentence, no explanations or extra text:\n"${prompt}"`;
       const result = await model.generateContent(taskPrompt);
   
       setResponse(result.response.text); 
@@ -31,13 +31,13 @@ function Gemini_API() {
 
   return (
     <div className="overall-wrapper">
-      <h2>Paraphrasing Tool</h2>
+      <p>Paraphrasing Tool</p>
       <textarea
         className="Prompt-area"
         rows="4"
         cols="50"
         value={prompt}
-        placeholder="Enter the prompt...."
+        placeholder="To rewrite text, enter or paste it here and press &quot;Paraphrase&quot;."
         onChange={(e) => setPrompt(e.target.value)}
       ></textarea>
       <br />
