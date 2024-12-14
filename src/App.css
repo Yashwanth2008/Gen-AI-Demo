@@ -15,7 +15,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  bottom: 200px;
+  bottom: 100px;
 }
 .submit-btn {
   width: 90px;

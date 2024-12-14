@@ -31,7 +31,7 @@ function Gemini_API() {
 
   return (
     <div className="overall-wrapper">
-      <p>Paraphrasing Tool</p>
+      <h1>Paraphrasing Tool</h1>
       <textarea
         className="Prompt-area"
         rows="4"
