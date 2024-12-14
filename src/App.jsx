@@ -45,7 +45,7 @@ function Gemini_API() {
         <Button title="Paraphrase" functionality={handleRephrase}/>
         <Button title="Clear" functionality={handleClear}/>
       </div>
-      <div className="response-content">
+      <div className="response-content-wrapper">
         <p className="response-content">{response}</p>
       </div>
     </div>
