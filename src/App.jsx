@@ -7,17 +7,20 @@ function Gemini_API() {
   const [prompt, setPrompt] = useState();
   const [response, setResponse] = useState();
 
-  const handleGenerate = async () => {
+  const handleRephrase = async () => {
     const genAI = new GoogleGenerativeAI(
       "AIzaSyAAwRHDl2BodreDhIZmGGHAX4M1rrEHeKk"
     );
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  
     try {
-      const result = await model.generateContent(`${prompt}`);
-      setResponse(result.response.text());
+      const taskPrompt = `Please rephrase the following sentence in a professional manner:\n"${prompt}"`;
+      const result = await model.generateContent(taskPrompt);
+  
+      setResponse(result.response.text); 
     } catch (error) {
-      console.error("Error generating content:", error);
-      setResponse("An error occurred while generating content.");
+      console.error("Error rephrasing content:", error);
+      setResponse("An error occurred while rephrasing the sentence.");
     }
   };
 
@@ -28,7 +31,7 @@ function Gemini_API() {
 
   return (
     <div className="overall-wrapper">
-      <h2>Demo</h2>
+      <h2>Paraphrasing Tool</h2>
       <textarea
         className="Prompt-area"
         rows="4"
@@ -39,7 +42,7 @@ function Gemini_API() {
       ></textarea>
       <br />
       <div className="buttons">
-        <Button title="Generate" functionality={handleGenerate}/>
+        <Button title="Paraphrase" functionality={handleRephrase}/>
         <Button title="Clear" functionality={handleClear}/>
       </div>
       <div className="response-content">
