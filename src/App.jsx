@@ -12,7 +12,7 @@ function Gemini_API() {
       "AIzaSyAAwRHDl2BodreDhIZmGGHAX4M1rrEHeKk"
     );
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-  
+
     try {
       const taskPrompt = `Please rephrase the following sentence professionally. Provide only the paraphrased sentence, no explanations or extra text:\n"${prompt}"`;
       const result = await model.generateContent(taskPrompt);
